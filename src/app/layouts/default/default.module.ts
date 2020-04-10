@@ -13,6 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 import { DashboardService } from 'src/app/modules/dashboard.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import { StatsComponent } from 'src/app/modules/stats/stats.component';
+import { UsersComponent } from 'src/app/modules/users/users.component';
+import { NotificationsComponent } from 'src/app/modules/notifications/notifications.component';
 
 
 
@@ -20,7 +23,10 @@ import {MatTableModule} from '@angular/material/table';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent
+    PostsComponent,
+    StatsComponent,
+    UsersComponent,
+    NotificationsComponent
   ],
   imports: [
     CommonModule,

@@ -19,13 +19,13 @@ export class AreaComponent implements OnInit {
   ngOnInit(): void {
     this.chartOptions = {
         chart: {
-            type: 'area'
+            type: 'bar'
         },
         title: {
-            text: 'Historic and Estimated Worldwide Population Growth by Region'
+            text: 'Add Text Here'
         },
         xAxis: {
-            categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+            categories: ['3527', '3365', '1222', '5432', '6543', '7463', '2050'],
             tickmarkPlacement: 'on',
             title: {
                 enabled: false
