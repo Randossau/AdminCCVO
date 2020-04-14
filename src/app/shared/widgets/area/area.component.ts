@@ -19,13 +19,13 @@ export class AreaComponent implements OnInit {
   ngOnInit(): void {
     this.chartOptions = {
         chart: {
-            type: 'bar'
+            type: 'area'
         },
         title: {
-            text: 'Add Text Here'
+            text: 'Type de parcours'
         },
         xAxis: {
-            categories: ['3527', '3365', '1222', '5432', '6543', '7463', '2050'],
+            categories: ['327', '365', '122', '532', '643', '763', '2050'],
             tickmarkPlacement: 'on',
             title: {
                 enabled: false
@@ -33,7 +33,7 @@ export class AreaComponent implements OnInit {
         },
         yAxis: {
             title: {
-                text: 'Billions'
+                text: 'pourcentage'
             },
             labels: {
                 formatter: function () {
@@ -43,7 +43,7 @@ export class AreaComponent implements OnInit {
         },
         tooltip: {
             split: true,
-            valueSuffix: 'Billions'
+            valueSuffix: 'personnes'
         },
         credits: {
           enabled: false,
@@ -52,20 +52,11 @@ export class AreaComponent implements OnInit {
           enabled: true,
         },
         series: [{
-          name: 'Asia',
+          name: 'Pedestre',
           data: [502, 635, 809, 947, 1402, 3634, 5268]
       }, {
-          name: 'Africa',
+          name: 'VTT',
           data: [106, 107, 111, 133, 221, 767, 1766]
-      }, {
-          name: 'Europe',
-          data: [163, 203, 276, 408, 547, 729, 628]
-      }, {
-          name: 'America',
-          data: [18, 31, 54, 156, 339, 818, 1201]
-      }, {
-          name: 'Oceania',
-          data: [2, 2, 2, 6, 13, 30, 46]
       }]
       };
       HC_exporting(Highcharts);
