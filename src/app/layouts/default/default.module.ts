@@ -19,6 +19,7 @@ import { NotificationsComponent } from 'src/app/modules/notifications/notificati
 
 
 
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -37,7 +38,7 @@ import { NotificationsComponent } from 'src/app/modules/notifications/notificati
     FlexLayoutModule,
     MatCardModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [
     DashboardService
