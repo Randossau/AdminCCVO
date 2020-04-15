@@ -6,6 +6,7 @@ import { PostsComponent } from './modules/posts/posts.component';
 import { UsersComponent } from './modules/users/users.component';
 import { NotificationsComponent } from './modules/notifications/notifications.component';
 import { StatsComponent } from './modules/stats/stats.component';
+import { MapComponent } from './modules/map/map.component';
 
 
 const routes: Routes = [{
@@ -31,6 +32,10 @@ const routes: Routes = [{
   {
     path: 'statistics',
     component: StatsComponent
+  },
+  {
+    path: 'map',
+    component: MapComponent
   }
 ]
 }];

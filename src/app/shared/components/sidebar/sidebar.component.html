@@ -1,34 +1,41 @@
 <mat-nav-list>
-   <div class="profile-card">
+  <div class="profile-card">
     <div class="header">
-        <h2>Marie-Laure</h2>
-        <h4>example@gmail.com</h4>
+      <h2>Marie-Laure</h2>
+      <h4>example@gmail.com</h4>
     </div>
-    <img src="assets/img/logo_ccvo.svg" alt="no image">
-   </div>
-<mat-divider></mat-divider>
+    <img src="assets/img/logo_ccvo.svg" alt="no image" />
+  </div>
+  <mat-divider></mat-divider>
 
-<h2 matSubheader>Pages</h2>
+  <h2 matSubheader>Pages</h2>
 
-<a mat-list-item  routerLink="/" routerLinkActive="list-item-active">Tableau de Bord</a>
-<a mat-list-item  routerLink="/users" routerLinkActive="list-item-active">Utilisateurs</a>
-<a mat-list-item  routerLink="/notifications" routerLinkActive="list-item-active" matBadge="9" matBadgeOverlap="false">Notifications</a>
-<a mat-list-item  routerLink="/statistics" routerLinkActive="list-item-active">Statistiques</a>
+  <a mat-list-item routerLink="/" routerLinkActive="list-item-active">
+    <mat-icon>dashboard</mat-icon>Tableau de Bord
+  </a>
+  <a mat-list-item routerLink="/users" routerLinkActive="list-item-active">
+    <mat-icon>supervised_user_circle</mat-icon>Utilisateurs
+  </a>
+  <a mat-list-item routerLink="/map" routerLinkActive="list-item-active">
+    <mat-icon>map</mat-icon>Carte
+  </a>
+  <a mat-list-item routerLink="/notifications" routerLinkActive="list-item-active" >
+    <mat-icon>sms</mat-icon>Notifications
+  </a>
+  <a mat-list-item routerLink="/statistics" routerLinkActive="list-item-active">
+    <mat-icon>show_chart</mat-icon>Statistiques
+  </a>
 
-<mat-divider></mat-divider>
+  <mat-divider></mat-divider>
 
-<h2 matSubheader>Outils</h2>
-<a mat-list-item  routerLink="/" routerLinkActive="list-item-active">
+  <h2 matSubheader>Outils</h2>
+  <a mat-list-item routerLink="/" routerLinkActive="list-item-active">
     <mat-icon>contacts</mat-icon>
     Qui contacter ?
-</a>
+  </a>
 
-<a mat-list-item  routerLink="/" routerLinkActive="list-item-active">
+  <a mat-list-item routerLink="/" routerLinkActive="list-item-active">
     <mat-icon>phones</mat-icon>
     Annuaire CCVO
-</a>
-
-
+  </a>
 </mat-nav-list>
-
-

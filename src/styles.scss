@@ -1,4 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'src/assets/fonts/font-BalooBhaina.scss';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// @font-face {
+//   font-family: 'Pacifico';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url('../assets/fonts/pacifico-regular.eot'); /* IE9 Compat Modes */
+//   src: local('Pacifico Regular'), local('Pacifico-Regular'),
+//   url('../assets/fonts/pacifico-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//   url('../assets/fonts/pacifico-latin-regular.woff') format('woff'), /* Modern Browsers */
+//   url('../assets/fonts/pacifico-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+//   url('../assets/fonts/pacifico-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+//   url('../assets/fonts/pacifico-latin-regular.svg#Pacifico') format('svg'); /* Legacy iOS */
+//   }

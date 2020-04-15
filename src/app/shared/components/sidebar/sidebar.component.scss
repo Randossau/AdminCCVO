@@ -1,9 +1,31 @@
+
 :host {
+  .mat-nav-list {
+    overflow-x: hidden;
+  }
+    a {
+      padding-left: 10px;
+      font-family: "Baloo-SemiBold";
+      font-weight: 600;
+      &:hover {
+        color: white;
+        background-color:rgb(63, 81, 181);
+        transition: 0.1s ease-in-out;
+      }
+    }
+
+    h2, h4 {
+      font-family: "Baloo-Bold";
+    }
+
+    h4 {
+      font-family: "Baloo-Medium";
+    }
     .mat-icon{
         vertical-align:midlle;
         margin-right: 20px;
     }
-    
+
     .profile-card {
         text-align: center;
         padding: 0 20px 20px 20px;
@@ -15,3 +37,4 @@
         }
     }
 }
+
