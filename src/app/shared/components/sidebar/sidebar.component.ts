@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  badgeContent : number;
 
-  constructor() { 
-   
+  constructor() {
+    this.badgeContent = 10;
   }
 
   ngOnInit(): void {
