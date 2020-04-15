@@ -10,14 +10,11 @@
             <ul fxLayout="row" fxLayoutGap="20px">
                 <li>
                     <button mat-icon-button>
-                        <mat-icon>settings</mat-icon>
+                        <mat-icon matBadge="15" matBadgeColor="warn">message</mat-icon>
                     </button>
-                </li>
-
-                <li>
-                    <button mat-icon-button>
-                        <mat-icon>help_outline</mat-icon>
-                    </button>
+                    <span class="cdk-visually-hidden">
+                        Exemple de preview de messages 
+                      </span>
                 </li>
                 <li>
                     <button mat-button [matMenuTriggerFor]="menu">
@@ -28,7 +25,13 @@
                             <mat-icon>exit_to_app</mat-icon>
                             Se déconnecter
                         </button>
+                        
                     </mat-menu>
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>settings</mat-icon>
+                    </button>
                 </li>
             </ul>
         </div>
