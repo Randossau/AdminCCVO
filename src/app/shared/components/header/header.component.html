@@ -1,16 +1,19 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-start">
         <button mat-icon-button (click)="toggleSideBar()">
             <mat-icon>menu</mat-icon>
         </button>
-        <span>Rand'Ossau</span>
+        <span>Rand'Ossau
+            <img src="assets/img/logo_ccvo.svg" alt="no image" />
+        </span>
+        </div>
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
                 <li>
-                    <button mat-icon-button>
-                        <mat-icon matBadge="15" matBadgeColor="warn">message</mat-icon>
+                    <button matTooltip="Info about the action" mat-icon-button>
+                        <mat-icon matBadge="5" matBadgeColor="warn">message</mat-icon>
                     </button>
                     <span class="cdk-visually-hidden">
                         Exemple de preview de messages 
