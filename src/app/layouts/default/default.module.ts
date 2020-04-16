@@ -19,9 +19,8 @@ import { NotificationsComponent } from 'src/app/modules/notifications/notificati
 import { MapComponent } from 'src/app/modules/map/map.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { CdkTableModule } from '@angular/cdk/table';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule, AgmMarker, AgmMap } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,11 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatPaginatorModule,
     MatTableModule,
     MatBadgeModule,
-    CdkTableModule
+    CdkTableModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAVeEO8BNdM2XZcsgTYdRxIbGvUR3w9u4A'
+    })
   ],
   providers: [
     DashboardService
