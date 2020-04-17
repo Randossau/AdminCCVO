@@ -7,6 +7,7 @@ import { UsersComponent } from './modules/users/users.component';
 import { NotificationsComponent } from './modules/notifications/notifications.component';
 import { StatsComponent } from './modules/stats/stats.component';
 import { MapComponent } from './modules/map/map.component';
+import { ParcoursComponent } from './modules/parcours/parcours.component';
 
 
 const routes: Routes = [{
@@ -36,7 +37,10 @@ const routes: Routes = [{
   {
     path: 'map',
     component: MapComponent
-  }
+  },{
+    path: 'parcours',
+    component: ParcoursComponent
+  },
 ]
 }];
 
