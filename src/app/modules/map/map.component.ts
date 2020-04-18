@@ -4,6 +4,8 @@ import * as L from 'leaflet';
 
 
 
+declare const google: any;
+
 
 @Component({
   selector: 'app-map',
@@ -11,6 +13,7 @@ import * as L from 'leaflet';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements AfterViewInit {
+
 
 
   map;
@@ -73,5 +76,3 @@ export class MapComponent implements AfterViewInit {
     marker.addTo(this.map).bindPopup(text);
 
   }
-}
-
