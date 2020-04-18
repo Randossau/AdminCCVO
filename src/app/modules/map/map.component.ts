@@ -1,14 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MouseEvent } from '@agm/core';
-import { AgmCoreModule } from '@agm/core';
+import { Component, AfterViewInit } from '@angular/core';
+import { latLng } from 'leaflet';
+import * as L from 'leaflet';
 
 
-interface marker {
-	lat: number;
-	lng: number;
-	label?: string;
-	draggable: boolean;
-}
 
 declare const google: any;
 
@@ -18,162 +12,67 @@ declare const google: any;
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements AfterViewInit {
 
-  // google maps zoom level
-  zoom: number = 12;
 
-  // initial center position for the map
-  lat: number =  43.105543;
-  lng: number = -0.428476;
+
+  map;
+
+  smallIcon = new L.Icon({
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon.png',
+    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    shadowSize: [41, 41]
+  });
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    this.createMap();
   }
 
-  clickedMarker(label: string, index: number) {
-    console.log(`clicked the marker: ${label || index}`)
-  }
+  createMap() {
+    const arudy = {
+      lat: 43.1166700,
+      lng: -0.4333300,
+    };
+     const pau = {
+      lat: 43.3,
+      lng: -0.3667,
+    };
+    const laruns = {
+      lat:  42.9883,
+      lng:  -0.4266,
+    }
 
-  mapClicked($event: MouseEvent) {
-      this.markers.push({
-      lat: $event.coords.lat,
-      lng: $event.coords.lng,
-      draggable: true
+    const zoomLevel = 12;
+    this.map = L.map('map', {
+      center: [laruns.lat, laruns.lng],
+      zoom: zoomLevel
     });
+
+    const mainLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      minZoom: 8,
+      maxZoom: 17,
+    });
+
+    mainLayer.addTo(this.map);
+    const dLaruns = 
+    'Laruns (en béarnais Laruntz) est une commune française, située dans le département des Pyrénées-Atlantiques en région Nouvelle-Aquitaine.'
+    const dArudy = 'Arudy (en béarnais Arúdi) est une commune française.'
+    const dPau = 'La ville se situe au cœur du Béarn.'
+    this.addMarker(arudy, dArudy);
+    this.addMarker(pau, dPau);
+    this.addMarker(laruns, dLaruns);
+
   }
 
-  markerDragEnd(m: marker, $event: MouseEvent) {
-    console.log('dragEnd', m, $event);
+  addMarker(coords, text) {
+
+    const marker = L.marker([coords.lat, coords.lng], { icon: this.smallIcon });
+    marker.addTo(this.map).bindPopup(text);
+
   }
-
-  markers: marker[] = [
-	  {
-		  lat: 51.673858,
-		  lng: 7.815982,
-		  label: 'A',
-		  draggable: true
-	  },
-	  {
-		  lat: 51.373858,
-		  lng: 7.215982,
-		  label: 'B',
-		  draggable: false
-	  },
-	  {
-		  lat: 51.723858,
-		  lng: 7.895982,
-		  label: 'C',
-		  draggable: true
-	  }
-  ]
-
-
-  // ngOnInit() {
-
-  //   var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
-  //   var mapOptions = {
-  //       zoom: 13,
-  //       center: myLatlng,
-  //       scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-  //       styles: [{
-  //           "featureType": "water",
-  //           "stylers": [{
-  //               "saturation": 43
-  //           }, {
-  //               "lightness": -11
-  //           }, {
-  //               "hue": "#0088ff"
-  //           }]
-  //       }, {
-  //           "featureType": "road",
-  //           "elementType": "geometry.fill",
-  //           "stylers": [{
-  //               "hue": "#ff0000"
-  //           }, {
-  //               "saturation": -100
-  //           }, {
-  //               "lightness": 99
-  //           }]
-  //       }, {
-  //           "featureType": "road",
-  //           "elementType": "geometry.stroke",
-  //           "stylers": [{
-  //               "color": "#808080"
-  //           }, {
-  //               "lightness": 54
-  //           }]
-  //       }, {
-  //           "featureType": "landscape.man_made",
-  //           "elementType": "geometry.fill",
-  //           "stylers": [{
-  //               "color": "#ece2d9"
-  //           }]
-  //       }, {
-  //           "featureType": "poi.park",
-  //           "elementType": "geometry.fill",
-  //           "stylers": [{
-  //               "color": "#ccdca1"
-  //           }]
-  //       }, {
-  //           "featureType": "road",
-  //           "elementType": "labels.text.fill",
-  //           "stylers": [{
-  //               "color": "#767676"
-  //           }]
-  //       }, {
-  //           "featureType": "road",
-  //           "elementType": "labels.text.stroke",
-  //           "stylers": [{
-  //               "color": "#ffffff"
-  //           }]
-  //       }, {
-  //           "featureType": "poi",
-  //           "stylers": [{
-  //               "visibility": "off"
-  //           }]
-  //       }, {
-  //           "featureType": "landscape.natural",
-  //           "elementType": "geometry.fill",
-  //           "stylers": [{
-  //               "visibility": "on"
-  //           }, {
-  //               "color": "#b8cb93"
-  //           }]
-  //       }, {
-  //           "featureType": "poi.park",
-  //           "stylers": [{
-  //               "visibility": "on"
-  //           }]
-  //       }, {
-  //           "featureType": "poi.sports_complex",
-  //           "stylers": [{
-  //               "visibility": "on"
-  //           }]
-  //       }, {
-  //           "featureType": "poi.medical",
-  //           "stylers": [{
-  //               "visibility": "on"
-  //           }]
-  //       }, {
-  //           "featureType": "poi.business",
-  //           "stylers": [{
-  //               "visibility": "simplified"
-  //           }]
-  //       }]
-
-  //   };
-  //   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-  //   var marker = new google.maps.Marker({
-  //       position: myLatlng,
-  //       title: "Hello World!"
-  //   });
-
-  //   // To add the marker to the map, call setMap();
-  //   marker.setMap(map);
-  // }
-
-}
-
