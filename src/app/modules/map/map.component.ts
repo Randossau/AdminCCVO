@@ -76,3 +76,4 @@ export class MapComponent implements AfterViewInit {
     marker.addTo(this.map).bindPopup(text);
 
   }
+}
