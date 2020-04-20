@@ -1,8 +1,11 @@
+import { Component, OnInit } from '@angular/core';
 import { Component, AfterViewInit } from '@angular/core';
+
+// à utiliser lors de l'utilisation de AnfularGoogleMaps(agm)
+//import { MouseEvent } from '@agm/core';
+
 import { latLng } from 'leaflet';
 import * as L from 'leaflet';
-
-
 
 declare const google: any;
 
@@ -13,8 +16,6 @@ declare const google: any;
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements AfterViewInit {
-
-
 
   map;
 
