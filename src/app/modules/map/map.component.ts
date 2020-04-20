@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
-import { AgmCoreModule } from '@agm/core';
-
 
 interface marker {
 	lat: number;
