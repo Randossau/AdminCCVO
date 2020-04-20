@@ -9,34 +9,15 @@
 
 <br>
 
-<div fxlayout="row" fxLayouAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-
-    <mat-card fxFlex="25">
-        <app-widget-card label="Utilisateurs" total="18k" percentage="20" [data]="cards"></app-widget-card>
-    </mat-card>
-
-    <mat-card fxFlex="25">
-        <app-widget-card label="Nouveaux utilisateurs" total="1k" percentage="70" [data]="cards"></app-widget-card>
-    </mat-card>
-
-    <mat-card fxFlex="25">
-        <app-widget-card label="..." total="11k" percentage="5" [data]="cards"></app-widget-card>
-    </mat-card>
-
-    <mat-card fxFlex="25">
-        <app-widget-card label="User" total="1k" percentage="58" [data]="cards"></app-widget-card>
-    </mat-card>
-
-</div>
-
-<br>
-
 <mat-divider></mat-divider>
 
 <br>
 
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
-    <div fxFlex="60">
+  <div fxFlex="60">
+    <app-widget-pie [data]="pieChart"></app-widget-pie>
+</div>
+    <div fxFlex="40">
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="dataSource">
           
@@ -84,11 +65,29 @@
           </div>
           
     </div>
-    <div fxFlex="40">
-        <app-widget-pie [data]="pieChart"></app-widget-pie>
-    </div>
+
+</div>
+<br>
+<br>
+<br>
+
+<div fxlayout="row" fxLayouAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+
+  <mat-card fxFlex="25">
+      <app-widget-card label="Utilisateurs" total="18k" percentage="20" [data]="cards"></app-widget-card>
+  </mat-card>
+
+  <mat-card fxFlex="25">
+      <app-widget-card label="Nouveaux utilisateurs" total="1k" percentage="70" [data]="cards"></app-widget-card>
+  </mat-card>
+
+  <mat-card fxFlex="25">
+      <app-widget-card label="..." total="11k" percentage="5" [data]="cards"></app-widget-card>
+  </mat-card>
+
+  <mat-card fxFlex="25">
+      <app-widget-card label="User" total="1k" percentage="58" [data]="cards"></app-widget-card>
+  </mat-card>
+
 </div>
 
-<br>
-<br>
-<br>

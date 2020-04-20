@@ -22,7 +22,7 @@ export class AreaComponent implements OnInit {
             type: 'area'
         },
         title: {
-            text: 'Type de parcours'
+            text: 'Pourcentage des randonnées pedestre et VTT'
         },
         xAxis: {
             categories: ['327', '365', '122', '532', '643', '763', '2050'],

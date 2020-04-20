@@ -35,6 +35,7 @@ import { AgmCoreModule } from '@agm/core';
     ParcoursComponent,
     MapComponent,
     NotificationsComponent
+    
   ],
   imports: [
     CommonModule,

@@ -22,7 +22,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.chartOptions = {
       chart: {
-          type: 'area',
+          type: 'line',
           backgroundColor: null,
           borderWidth: 0,
           margin: [ 2,2,2,2],
