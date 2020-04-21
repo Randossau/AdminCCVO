@@ -19,7 +19,7 @@ export class AreaComponent implements OnInit {
   ngOnInit(): void {
     this.chartOptions = {
         chart: {
-            type: 'area'
+            type: 'line'
         },
         title: {
             text: 'Pourcentage des randonnées pedestre et VTT'
