@@ -1,33 +1,13 @@
 <p>add-parcours works!</p>
-<!-- <app-add-items></app-add-items> -->
-<!--
-<div *ngIf="items?.length > 0;else noItems">
-    <ul class="collection" *ngFor="let item of items">
-        <li  class="collection-item">
-            <strong>{{ item.title }}</strong> : {{ item.description }}
-            <a (click)="editItem($event, item)"  href="#" class="secondary-content"> edit</a>
+<form (ngSubmit)="onSubmit()" class="col s6">
+  <div class="row">
+      <div class="input-field col s6">
+          <input type="text" placeholder="Add Title" [(ngModel)]="parcours.titre" name="title">
+          <label>Title</label>
 
-            <a *ngIf="editState && itemToEdit.id == item.id" (click)="clearState()"  href="#" class="secondary-content"> close</a>
-
-            <div *ngIf="editState && itemToEdit.id == item.id">
-                <form (ngSubmit)="updateItem(item)">
-                    <div class="row">
-                        <div class="input-field col s6">
-
-                            <input type="text" placeholder="Add Title" [(ngModel)]="item.title" name="title">
-                            <input type="text" placeholder="Add Description" [(ngModel)]="item.description" name="description">
-
-                        </div>
-                        <input type="submit" value="Update Item" class="btn orange">
-                        <button (click)="deleteItem($event, item)" class="btn red">Delete Item</button>
-                    </div>
-                </form>
-            </div>
-        </li>
-    </ul>
-</div>
-
-<ng-template #noItems>
-    <hr>
-    <h5>No hay items!! Por Favor !!</h5>
-</ng-template> -->
+          <input type="text" placeholder="Add Description" [(ngModel)]="parcours.description" name="description">
+          <label>Description</label>
+      </div>
+      <input type="submit" value="Submit" class="btn">
+  </div>
+</form>

@@ -21,7 +21,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
@@ -76,6 +76,7 @@ import { ParcoursServService } from 'src/app/modules/parcours/services/parcours-
     MatGridListModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatDialogModule,
     HttpClientModule,
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyAVeEO8BNdM2XZcsgTYdRxIbGvUR3w9u4A'

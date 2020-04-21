@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IParcours } from '../parcoursDataModel/parcoursInterface';
+import { ParcoursServService } from '../services/parcours-serv.service';
+
 
 @Component({
   selector: 'app-add-parcours',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddParcoursComponent implements OnInit {
 
-  constructor() { }
+  // @Input() parcours: IParcours;
+  parcours: IParcours = {
+    titre: '',
+    description: '',
+    pointDepart: '',
+    type: '',
+  }
+
+  constructor(private parcourServ: ParcoursServService) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    if(this.parcours.titre !=''
+      && this.parcours.description !=''
+      && this.parcours.pointDepart !=''
+      && this.parcours.type !=''
+    )
+    this.parcourServ.addParcours(this.parcours);
+    this.parcours.titre ='';
+    this.parcours.description ='';
+    this.parcours.pointDepart ='';
+    this.parcours.type ='';
+  }
 }
