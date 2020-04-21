@@ -14,10 +14,6 @@ export class ParcoursServService {
   parcours: Observable<IParcours[]>;
   parcoursDoc: AngularFirestoreDocument<IParcours>;
 
-  // itemsCollection: AngularFirestoreCollection<Item>;
-  // items: Observable<Item[]>;
-  // itemDoc: AngularFirestoreDocument<Item>;
-
 
   constructor(public afs: AngularFirestore) {
     // this.items = this.afs.collection('items').valueChanges()
@@ -36,7 +32,7 @@ export class ParcoursServService {
   //    return this.items;
   //  }
 
-  getParcours(parcours: IParcours){
+  getParcours(){
     return this.parcours;
   }
 
