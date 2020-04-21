@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { ParcoursServService } from './modules/parcours/services/parcours-serv.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
