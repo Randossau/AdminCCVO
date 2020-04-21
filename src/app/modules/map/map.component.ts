@@ -1,13 +1,10 @@
-import { OnInit } from '@angular/core';
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 // à utiliser lors de l'utilisation de AnfularGoogleMaps(agm)
 //import { MouseEvent } from '@agm/core';
 
-import { latLng } from 'leaflet';
 import * as L from 'leaflet';
 
-declare const google: any;
 
 
 @Component({
@@ -69,7 +66,7 @@ export class MapComponent implements AfterViewInit {
     });
 
     mainLayer.addTo(this.map);
-    const dLaruns = 
+    const dLaruns =
     'Laruns (en béarnais Laruntz) est une commune française, située dans le département des Pyrénées-Atlantiques en région Nouvelle-Aquitaine.'
     const dArudy = "Arudy, porte de la vallée d'Ossau : Occupée depuis 11 000 ans par l'homme pyrénéen, Arudy s'étend au centre d'un ancien bassin glaciaire, foyer du premier noyau d'habitat de la vallée d'Ossau. Le village d'Aruri ou Eruri, mentionné dès le XIIIe siècle prendra son nom définitif d'Arudy à la fin du Moyen-Age."
     const dPau = 'La ville se situe au cœur du Béarn.'

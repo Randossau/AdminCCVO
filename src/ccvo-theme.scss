@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+$ccvo-app-primary: mat-palette($mat-green);
+$ccvo-app-accent: mat-palette($mat-lime, A700);
+$ccvo-app-warn: mat-palette(mat-deep-orange, A700, 900);
+$ccvo-app-theme:  mat-light-theme($ccvo-app-primary, $ccvo-app-accent, $ccvo-app-warn);
+
+@include angular-material-theme($ccvo-app-theme);
+
+
+// "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"

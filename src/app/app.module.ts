@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 
-
-
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { ParcoursServService } from './modules/parcours/services/parcours-serv.service';
 
 
 @NgModule({
@@ -20,11 +22,12 @@ import { DefaultModule } from './layouts/default/default.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-
-
+    AngularFirestoreModule,
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),  
   ],
 
-  providers: [],
+  providers: [ParcoursServService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

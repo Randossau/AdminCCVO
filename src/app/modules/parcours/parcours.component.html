@@ -1,1 +1,143 @@
-<p>parcours works!</p>
+<div>
+  <div *ngIf="parcours?.length > 0; else noData">
+    <mat-expansion-panel *ngFor="let parcours of parcours">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-family: Origin-Bold; font-size: 20px;">
+          {{ parcours.titre }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-tab-group
+        mat-stretch-tabs
+        animationDuration="1000ms"
+        dynamicHeight
+        style="font-family: Origin-Light; font-size: 15px;"
+      >
+        <mat-tab label="Description" dynamicHeight class="mat-tab-label">
+          <br />
+          <mat-panel-description>
+            <h3>{{ parcours.description }}</h3>
+          </mat-panel-description>
+          <br />
+
+          <div class="list-container">
+            <div class="list-left">
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line>
+                    <h4>
+                      <mat-icon>adjust</mat-icon> Point de Depart:
+                      {{ parcours.pointDepart }}
+                    </h4>
+                  </div>
+                </mat-list-item>
+                <mat-list-item>
+                  <div mat-line>
+                    <h4>
+                      <mat-icon>av_timer</mat-icon> Durée : {{ parcours.duree }}
+                    </h4>
+                  </div>
+                </mat-list-item>
+              </mat-list>
+            </div>
+
+            <div class="list-center">
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line>
+                    <h4>
+                      <mat-icon> directions_walk</mat-icon> Distance:
+                      {{ parcours.distance }} km
+                    </h4>
+                  </div>
+                </mat-list-item>
+                <mat-list-item>
+                  <div mat-line>
+                    <h4>
+                      <mat-icon>spa</mat-icon> Niveau : {{ parcours.niveau }}
+                    </h4>
+                  </div>
+                </mat-list-item>
+              </mat-list>
+            </div>
+            <div class="list-right">
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line>
+                    <h4>
+                      <mat-icon>landscape</mat-icon>Denivelé :
+                      {{ parcours.elevation }} m.
+                    </h4>
+                  </div>
+                </mat-list-item>
+
+                <mat-list-item>
+                  <div mat-line>
+                    <h4>
+                      <mat-icon> category</mat-icon> Type: {{ parcours.type }}
+                    </h4>
+                  </div>
+                </mat-list-item>
+              </mat-list>
+            </div>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Carte">
+          <div style="height: 400px;">
+            <app-map></app-map>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Photos">
+          <mat-grid-list cols="4" rowHeight="100px">
+            <mat-grid-tile
+              *ngFor="let tile of tiles"
+              [colspan]="tile.cols"
+              [rowspan]="tile.rows"
+              [style.background]="tile.color"
+            >
+              {{ tile.text }}
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-tab>
+      </mat-tab-group>
+
+      <br />
+
+      <div class="btn-container">
+        <button mat-stroked-button color="accent">Supprimer</button>
+        <button mat-raised-button color="accent">Modifier</button>
+      </div>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+    </mat-expansion-panel>
+
+  </div>
+</div>
+<!--
+<div *ngIf="parcours?.length > 0; else noData">
+  <ul *ngFor = "let parcours of parcours">
+    <li>{{ parcours.titre }}</li>
+    <li>{{ parcours.description }}</li>
+  </ul>
+
+</div>
+
+  <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field>
+ -->
+
+<ng-template #noData>
+  <hr />
+  <h5>
+    iln y a pas de données
+  </h5>
+</ng-template>
