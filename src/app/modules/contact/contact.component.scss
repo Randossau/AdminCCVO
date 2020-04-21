@@ -1,0 +1,13 @@
+.example-card {
+    max-width: 230px;
+  }
+  
+  .example-header-image {
+    background-image: url(https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_male_user-512.png);
+    background-size: cover;
+  }
+  div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+  }

@@ -8,6 +8,8 @@ import { NotificationsComponent } from './modules/notifications/notifications.co
 import { StatsComponent } from './modules/stats/stats.component';
 import { MapComponent } from './modules/map/map.component';
 import { ParcoursComponent } from './modules/parcours/parcours.component';
+import { ContactComponent } from './modules/contact/contact.component';
+
 
 
 const routes: Routes = [{
@@ -37,10 +39,15 @@ const routes: Routes = [{
   {
     path: 'map',
     component: MapComponent
-  },{
+  },
+  {
     path: 'parcours',
     component: ParcoursComponent
   },
+  {
+    path: 'contact',
+    component: ContactComponent
+  }
 ]
 }];
 
