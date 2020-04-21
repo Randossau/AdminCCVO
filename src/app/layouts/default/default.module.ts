@@ -51,6 +51,7 @@ import { ParcoursServService } from 'src/app/modules/parcours/services/parcours-
     MapComponent,
     NotificationsComponent,
     AddParcoursComponent
+
   ],
   imports: [
     CommonModule,

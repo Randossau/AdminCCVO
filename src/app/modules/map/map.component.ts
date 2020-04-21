@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 // à utiliser lors de l'utilisation de AnfularGoogleMaps(agm)
 //import { MouseEvent } from '@agm/core';
@@ -45,11 +44,19 @@ export class MapComponent implements AfterViewInit {
     const laruns = {
       lat:  42.9883,
       lng:  -0.4266,
+    };
+    const rebenac = {
+      lat: 43.1599,
+      lng: -0.396171,
+    };
+    const buzy = {
+      lat: 43.133300,
+      lng: -0.450000,
     }
 
-    const zoomLevel = 12;
+    const zoomLevel = 13;
     this.map = L.map('map', {
-      center: [laruns.lat, laruns.lng],
+      center: [buzy.lat, buzy.lng],
       zoom: zoomLevel
     });
 
@@ -61,11 +68,17 @@ export class MapComponent implements AfterViewInit {
     mainLayer.addTo(this.map);
     const dLaruns =
     'Laruns (en béarnais Laruntz) est une commune française, située dans le département des Pyrénées-Atlantiques en région Nouvelle-Aquitaine.'
-    const dArudy = 'Arudy (en béarnais Arúdi) est une commune française.'
+    const dArudy = "Arudy, porte de la vallée d'Ossau : Occupée depuis 11 000 ans par l'homme pyrénéen, Arudy s'étend au centre d'un ancien bassin glaciaire, foyer du premier noyau d'habitat de la vallée d'Ossau. Le village d'Aruri ou Eruri, mentionné dès le XIIIe siècle prendra son nom définitif d'Arudy à la fin du Moyen-Age."
     const dPau = 'La ville se situe au cœur du Béarn.'
+    const dRebenac = 'Rébénacq a été fondé en 1347. Son coeur historique, autour d’une pittoresque place centrale, le rattache aux villages médiévaux qualifiés de bastide…'
+    const dBuzy = "La commune de Buzy, porte d'entrée de la vallée d'Ossau, se situe dans une zone de basse montagne du piémont béarnais. Collectivité du canton d'Arudy, elle est rattachée administrativement à la sous préfecture d'Oloron-Sainte-Marie, et se situe à une trentaine de kilomètre de Pau, chef lieu du département des Pyrénées Atlantiques, et à une quinzaine de kilomètres d'Oloron."
     this.addMarker(arudy, dArudy);
     this.addMarker(pau, dPau);
     this.addMarker(laruns, dLaruns);
+    this.addMarker(rebenac, dRebenac);
+    this.addMarker(buzy, dBuzy);
+    
+
 
   }
 
