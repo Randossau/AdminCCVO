@@ -1,3 +1,4 @@
+
 <div>
   <div *ngIf="parcours?.length > 0; else noData">
     <mat-expansion-panel *ngFor="let parcours of parcours">
@@ -135,9 +136,11 @@
       </mat-form-field>
  -->
 
+ <button mat-fab color="primary"><mat-icon>add</mat-icon></button>
+
 <ng-template #noData>
   <hr />
-  <h5>
+  <h5>  
     iln y a pas de données
   </h5>
 </ng-template>

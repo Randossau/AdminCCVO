@@ -9,6 +9,7 @@ import { StatsComponent } from './modules/stats/stats.component';
 import { MapComponent } from './modules/map/map.component';
 import { ParcoursComponent } from './modules/parcours/parcours.component';
 import { ContactComponent } from './modules/contact/contact.component';
+import { AddParcoursComponent } from './modules/parcours/add-parcours/add-parcours.component';
 
 
 
@@ -42,7 +43,11 @@ const routes: Routes = [{
   },
   {
     path: 'parcours',
-    component: ParcoursComponent
+    component: ParcoursComponent,
+  },
+  {
+    path: 'add-parcours',
+    component: AddParcoursComponent,
   },
   {
     path: 'contact',
@@ -52,7 +57,10 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+    // RouterModule.forChild(parentModuleRoutes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

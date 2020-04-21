@@ -33,10 +33,7 @@ export class ParcoursComponent implements OnInit {
       console.log(parcours);
       this.parcours = parcours;
     });
-
-
   }
-
 
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
