@@ -36,7 +36,11 @@ export class ParcoursServService {
   //    return this.items;
   //  }
 
-  getParcours(){
+  getParcours(parcours: IParcours){
     return this.parcours;
+  }
+
+  addParcours(parcours: IParcours){
+    this.parcoursCollection.add(parcours);
   }
 }
