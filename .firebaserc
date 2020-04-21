@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "adminccvo-b3b5e"
+  },
+  "targets": {
+    "adminccvo-b3b5e": {
+      "hosting": {
+        "dashboardCCVO": [
+          "adminccvo-b3b5e"
+        ]
+      }
+    }
+  }
+}

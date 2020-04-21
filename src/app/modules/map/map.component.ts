@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Component, AfterViewInit } from '@angular/core';
+import { AfterViewInit } from '@angular/core';
 
 // à utiliser lors de l'utilisation de AnfularGoogleMaps(agm)
 //import { MouseEvent } from '@agm/core';
 
-import { latLng } from 'leaflet';
 import * as L from 'leaflet';
 
-declare const google: any;
 
 
 @Component({
@@ -61,7 +59,7 @@ export class MapComponent implements AfterViewInit {
     });
 
     mainLayer.addTo(this.map);
-    const dLaruns = 
+    const dLaruns =
     'Laruns (en béarnais Laruntz) est une commune française, située dans le département des Pyrénées-Atlantiques en région Nouvelle-Aquitaine.'
     const dArudy = 'Arudy (en béarnais Arúdi) est une commune française.'
     const dPau = 'La ville se situe au cœur du Béarn.'
