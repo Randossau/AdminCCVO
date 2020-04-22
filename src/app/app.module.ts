@@ -13,6 +13,7 @@ import { ParcoursServService } from './modules/parcours/services/parcours-serv.s
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
