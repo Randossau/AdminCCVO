@@ -81,6 +81,7 @@ import { IncidentsComponent } from 'src/app/modules/incidents/incidents.componen
     MatSnackBarModule,
     MatDialogModule,
     HttpClientModule,
+    MatGridListModule
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyAVeEO8BNdM2XZcsgTYdRxIbGvUR3w9u4A'
     // }),

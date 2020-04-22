@@ -2,7 +2,7 @@
     <mat-toolbar-row>
         <div  fxFlex fxLayout="row" fxLayoutAlign="flex-start">
         <button mat-icon-button (click)="toggleSideBar()">
-            <mat-icon>menu</mat-icon>
+            <mat-icon>dashboard</mat-icon>
         </button>
         <span style color="white">Rand'Ossau
         </span>
@@ -11,12 +11,10 @@
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
                 <li>
-                    <button matTooltip="Info about the action" mat-icon-button>
-                        <mat-icon matBadge="5" matBadgeColor="warn">message</mat-icon>
+                    <button mat-raised-button color="primary"
+                        matBadge="8" matBadgePosition="above after" matBadgeColor="accent">
+                             message
                     </button>
-                    <span class="cdk-visually-hidden">
-                        Exemple de preview de messages
-                      </span>
                 </li>
                 <li>
                     <button mat-button [matMenuTriggerFor]="menu">
@@ -29,11 +27,6 @@
                         </button>
 
                     </mat-menu>
-                </li>
-                <li>
-                    <button mat-icon-button>
-                        <mat-icon>settings</mat-icon>
-                    </button>
                 </li>
             </ul>
         </div>
