@@ -10,6 +10,7 @@ import { MapComponent } from './modules/map/map.component';
 import { ParcoursComponent } from './modules/parcours/parcours.component';
 import { ContactComponent } from './modules/contact/contact.component';
 import { AddParcoursComponent } from './modules/parcours/add-parcours/add-parcours.component';
+import { IncidentsComponent } from './modules/incidents/incidents.component';
 
 
 
@@ -28,6 +29,10 @@ const routes: Routes = [{
   {
     path: 'users',
     component: UsersComponent
+  },
+  {
+    path: 'incidents',
+    component: IncidentsComponent
   },
   {
     path: 'notifications',

@@ -36,6 +36,7 @@ import { AddParcoursComponent } from 'src/app/modules/parcours/add-parcours/add-
 import { MapComponent } from 'src/app/modules/map/map.component';
 import { ParcoursServService } from 'src/app/modules/parcours/services/parcours-serv.service';
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
+import { IncidentsComponent } from 'src/app/modules/incidents/incidents.component';
 // import { AgmCoreModule } from '@agm/core';
 
 
@@ -52,6 +53,7 @@ import { ContactComponent } from 'src/app/modules/contact/contact.component';
     NotificationsComponent,
     AddParcoursComponent,
     ContactComponent,
+    IncidentsComponent,
 
   ],
   imports: [
