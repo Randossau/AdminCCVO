@@ -21,8 +21,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialogModule, MatDialogConfig} from '@angular/material/dialog';
-import {MatSortModule} from '@angular/material/sort';
+import { MatDialogConfig } from '@angular/material/dialog/dialog-config';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 import { DefaultComponent } from './default.component';
@@ -94,7 +96,8 @@ import { IncidentsComponent } from 'src/app/modules/incidents/incidents.componen
   providers: [
     DashboardService,
     ParcoursServService
-  ]
+  ],
+  entryComponents: [IncidentsComponent]
 })
 export class DefaultModule { }
 

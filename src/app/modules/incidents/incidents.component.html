@@ -3,13 +3,14 @@
     <mat-expansion-panel-header>
         <mat-panel-title style="font-family: Origin-Bold; font-size: 20px;">Incidents déclarés</mat-panel-title>
     </mat-expansion-panel-header>
-    <div>
-      
+    <div class="verif">
+      <button mat-raised-button (click)="onCreate()">Vérifier</button>
+    </div>
         <mat-form-field>
             <mat-label>Rechercher</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="...">
           </mat-form-field>
-        <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="20px">
+        <fxLayout fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="20px">
             <div fxFlex="500">
                 <div  [ngClass.lg]="['fxClass-lg','fxClass-lg2']" class="mat-elevation-z8">
                     <table mat-table [dataSource]="dataSource" matSort>
@@ -67,8 +68,8 @@
                   </div>
                   
             </div>
-        </div>
-    </div>
+        </fxLayout>
+   
       
 </mat-expansion-panel>
 <br /> 
@@ -88,5 +89,5 @@
     </mat-expansion-panel>
 </div>
 
-
+</div>
 
