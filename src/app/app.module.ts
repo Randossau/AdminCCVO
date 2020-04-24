@@ -31,5 +31,6 @@ import { ParcoursServService } from './modules/parcours/services/parcours-serv.s
 
   providers: [ParcoursServService],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
