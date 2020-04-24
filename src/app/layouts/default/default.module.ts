@@ -21,7 +21,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogConfig} from '@angular/material/dialog';
+import {MatSortModule} from '@angular/material/sort';
+
 
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
@@ -37,6 +39,7 @@ import { MapComponent } from 'src/app/modules/map/map.component';
 import { ParcoursServService } from 'src/app/modules/parcours/services/parcours-serv.service';
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import { IncidentsComponent } from 'src/app/modules/incidents/incidents.component';
+
 // import { AgmCoreModule } from '@agm/core';
 
 
@@ -81,7 +84,9 @@ import { IncidentsComponent } from 'src/app/modules/incidents/incidents.componen
     MatSnackBarModule,
     MatDialogModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSortModule
+    // MatDialogConfig,
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyAVeEO8BNdM2XZcsgTYdRxIbGvUR3w9u4A'
     // }),

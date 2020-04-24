@@ -1,63 +1,92 @@
-<div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="20px">
-    <div fxFlex="500">
-        <mat-grid-list cols="3" rowHeight="100px" style="height: 100px;" gutterSize="10px">
-            <mat-grid-tile>
-                <div>
-                    <mat-icon>eco</mat-icon>
-                        <br>
-                    <div>
-                        Végétation Gênante
-                    </div>
-                </div>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <div>
-                    <mat-icon>bug_report</mat-icon>
-                        <br>
-                   <div>
-                        Animaux/Insecte
-                   </div>
-                </div> 
-            </mat-grid-tile>
-            
-            <mat-grid-tile>
-                <div>
-                    <mat-icon>nature</mat-icon> 
-                  <br>
-                    <div>
-                    Chute d'arbres
-                    </div>  
-                </div>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <div>
-                    <mat-icon>not_interested</mat-icon> 
-                        <br>
-                    <div>
-                    Chemin impraticable
-                    </div>
-                </div>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <div>
-                    <mat-icon>flag</mat-icon> <br>
-                    <div>
-                        Balisage
-                    </div>
-                </div>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-                <div>
-                    <mat-icon>apps</mat-icon> <br>
-                    <div>
-                        Autres
-                    </div>
-                </div>
-            </mat-grid-tile>
-        </mat-grid-list>
+<div>
+<mat-expansion-panel style="height: auto;">
+    <mat-expansion-panel-header>
+        <mat-panel-title style="font-family: Origin-Bold; font-size: 20px;">Incidents déclarés</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+      
+        <mat-form-field>
+            <mat-label>Rechercher</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="...">
+          </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="20px">
+            <div fxFlex="500">
+                <div  [ngClass.lg]="['fxClass-lg','fxClass-lg2']" class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource" matSort>
+                  
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="no">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Numéro </th>
+                        <td mat-cell *matCellDef="let element"> {{element.no}} </td>
+                      </ng-container>
+                  
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="nom">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Libelle </th>
+                        <td mat-cell *matCellDef="let element"> {{element.libelle}} </td>
+                      </ng-container>
+                  
+                      <!-- Prenom Column -->
+                      <ng-container matColumnDef="prenom">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+                        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                      </ng-container>
+                  
+                      <!-- Email Column -->
+                      <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Lieu </th>
+                        <td mat-cell *matCellDef="let element"> {{element.lieu}} </td>
+                      </ng-container>
+        
+                        <!-- Date_creation Column -->
+                        <ng-container matColumnDef="date_creation">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date de l'incident </th>
+                          <td mat-cell *matCellDef="let element"> {{element.date_incident}} </td>
+                        </ng-container>
+        
+                          <!-- Derniere_connexion Column -->
+                      <ng-container matColumnDef="derniere_connexion">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Utilisateur </th>
+                        <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+                      </ng-container>
+        
+                         <!-- Notifications Column -->
+                         <ng-container matColumnDef="actions">
+                            <th mat-header-cell *matHeaderCellDef></th>
+                            <td mat-cell *matCellDef="let row">
+                                <button mat-icon-button color="accent"><mat-icon>launch</mat-icon></button>
+                                <button  mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
+                            </td>
+                            </ng-container>
+                  
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                  
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                  </div>
+                  
+            </div>
+        </div>
     </div>
+      
+</mat-expansion-panel>
+<br /> 
+
+<mat-expansion-panel style="height: auto;">
+  <mat-expansion-panel-header>
+      <mat-panel-title style="font-family: Origin-Bold; font-size: 20px;">Incidents en cours de traitement</mat-panel-title>
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
+
+<br>
+  <div>
+    <mat-expansion-panel style="height: auto;">
+      <mat-expansion-panel-header>
+          <mat-panel-title style="font-family: Origin-Bold; font-size: 20px;">Incidents résolus</mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
 </div>
+
+
+
