@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialogConfig } from '@angular/material/dialog/dialog-config';
 import { MatDialog } from '@angular/material/dialog';
+import { IncidentComponent } from './incident/incident.component';
 
 export interface Incidents {
   no: number;
@@ -59,7 +60,7 @@ export class IncidentsComponent implements OnInit {
 
 
   onCreate() {
-    this.dialog.open(IncidentsComponent);
+    this.dialog.open(IncidentComponent);
   }
 
 }
