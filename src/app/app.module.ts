@@ -10,6 +10,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { ParcoursServService } from './modules/parcours/services/parcours-serv.service';
+import { IncidentComponent } from './modules/incidents/incident/incident.component';
 
 
 
@@ -17,6 +18,7 @@ import { ParcoursServService } from './modules/parcours/services/parcours-serv.s
 @NgModule({
   declarations: [
     AppComponent,
+    IncidentComponent,
   ],
 
   imports: [
