@@ -8,6 +8,7 @@ import { Observable } from "rxjs";
 import { IncidentsI } from "./incidentInterface";
 import { map } from "rxjs/operators";
 
+
 @Injectable({
   providedIn: "root",
 })
