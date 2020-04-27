@@ -41,6 +41,8 @@ import { MapComponent } from 'src/app/modules/map/map.component';
 import { ParcoursServService } from 'src/app/modules/parcours/services/parcours-serv.service';
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import { IncidentsComponent } from 'src/app/modules/incidents/incidents.component';
+import { IncidentComponent } from 'src/app/modules/incidents/incident/incident.component';
+import { IncidentServService } from 'src/app/modules/incidents/services/incident-serv.service';
 
 // import { AgmCoreModule } from '@agm/core';
 
@@ -59,6 +61,7 @@ import { IncidentsComponent } from 'src/app/modules/incidents/incidents.componen
     AddParcoursComponent,
     ContactComponent,
     IncidentsComponent,
+    IncidentComponent
 
   ],
   imports: [
@@ -95,7 +98,8 @@ import { IncidentsComponent } from 'src/app/modules/incidents/incidents.componen
   ],
   providers: [
     DashboardService,
-    ParcoursServService
+    ParcoursServService,
+    IncidentServService
   ],
   entryComponents: [IncidentsComponent]
 })
