@@ -77,13 +77,9 @@ export class MapComponent implements AfterViewInit {
     this.addMarker(laruns, dLaruns);
     this.addMarker(rebenac, dRebenac);
     this.addMarker(buzy, dBuzy);
-    
-
-
   }
 
   addMarker(coords, text) {
-
     const marker = L.marker([coords.lat, coords.lng], { icon: this.smallIcon });
     marker.addTo(this.map).bindPopup(text);
 

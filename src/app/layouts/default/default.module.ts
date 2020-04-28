@@ -21,11 +21,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialogConfig } from '@angular/material/dialog/dialog-config';
-import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
+import { MatSortModule } from '@angular/material/sort';
 
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
@@ -41,6 +38,11 @@ import { MapComponent } from 'src/app/modules/map/map.component';
 import { ParcoursServService } from 'src/app/modules/parcours/services/parcours-serv.service';
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import { IncidentsComponent } from 'src/app/modules/incidents/incidents.component';
+import { IncidentComponent } from 'src/app/modules/incidents/incident/incident.component';
+import { LoginComponent } from 'src/app/auth/login/login.component';
+import { RegistrationComponent } from 'src/app/auth/registration/registration.component';
+
+
 
 // import { AgmCoreModule } from '@agm/core';
 
@@ -59,6 +61,9 @@ import { IncidentsComponent } from 'src/app/modules/incidents/incidents.componen
     AddParcoursComponent,
     ContactComponent,
     IncidentsComponent,
+    IncidentComponent,
+    RegistrationComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -87,7 +92,7 @@ import { IncidentsComponent } from 'src/app/modules/incidents/incidents.componen
     MatDialogModule,
     HttpClientModule,
     MatGridListModule,
-    MatSortModule
+    MatSortModule,
     // MatDialogConfig,
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyAVeEO8BNdM2XZcsgTYdRxIbGvUR3w9u4A'
