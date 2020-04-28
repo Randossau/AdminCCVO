@@ -3,11 +3,17 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import { MatDialogConfig } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 =======
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 >>>>>>> 432fb000c33ff9ee7bae78141d6152c8e2596e00
+=======
+
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
+>>>>>>> 6e390b9681ba7c77ab4810715d43549b38d25b00
 import { IncidentComponent } from './incident/incident.component';
 import { IncidentsI } from './services/incidentInterface';
 import { IncidentServService } from './services/incident-serv.service';
