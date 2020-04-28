@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,12 +17,13 @@ import { environment } from 'src/environments/environment';
 import { ParcoursServService } from './modules/parcours/services/parcours-serv.service';
 
 
-
 @NgModule({
+
   declarations: [
     AppComponent,
-
   ],
+
+  declarations: [AppComponent],
 
   imports: [
     BrowserModule,
@@ -37,8 +39,8 @@ import { ParcoursServService } from './modules/parcours/services/parcours-serv.s
     AngularFireModule.initializeApp(environment.firebase),
   ],
 
+
   providers: [ParcoursServService],
   bootstrap: [AppComponent]
-
 })
-export class AppModule { }
+export class AppModule {}

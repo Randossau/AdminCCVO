@@ -39,9 +39,11 @@ import { ParcoursServService } from 'src/app/modules/parcours/services/parcours-
 import { ContactComponent } from 'src/app/modules/contact/contact.component';
 import { IncidentsComponent } from 'src/app/modules/incidents/incidents.component';
 import { IncidentComponent } from 'src/app/modules/incidents/incident/incident.component';
+
 import { LoginComponent } from 'src/app/auth/login/login.component';
 import { RegistrationComponent } from 'src/app/auth/registration/registration.component';
 
+import { IncidentServService } from 'src/app/modules/incidents/services/incident-serv.service';
 
 
 // import { AgmCoreModule } from '@agm/core';
@@ -64,6 +66,7 @@ import { RegistrationComponent } from 'src/app/auth/registration/registration.co
     IncidentComponent,
     RegistrationComponent,
     LoginComponent
+
 
   ],
   imports: [
@@ -100,7 +103,8 @@ import { RegistrationComponent } from 'src/app/auth/registration/registration.co
   ],
   providers: [
     DashboardService,
-    ParcoursServService
+    ParcoursServService,
+    IncidentServService
   ],
   entryComponents: [IncidentsComponent]
 })
