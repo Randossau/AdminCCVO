@@ -43,7 +43,6 @@ import { LoginComponent } from 'src/app/auth/login/login.component';
 import { RegistrationComponent } from 'src/app/auth/registration/registration.component';
 
 
-
 // import { AgmCoreModule } from '@agm/core';
 
 
@@ -100,7 +99,8 @@ import { RegistrationComponent } from 'src/app/auth/registration/registration.co
   ],
   providers: [
     DashboardService,
-    ParcoursServService
+    ParcoursServService,
+    IncidentServService
   ],
   entryComponents: [IncidentsComponent]
 })

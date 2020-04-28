@@ -16,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   createUser(userRegForm){
-    this.authServ.createUser(userRegForm.value)
+    // this.authServ.createUser(userRegForm.value)
   }
 
 }
