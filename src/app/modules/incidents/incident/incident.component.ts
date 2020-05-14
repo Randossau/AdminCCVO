@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IncidentsI } from '../services/incidentInterface';
+import { IncidentServService } from '../services/incident-serv.service';
 
 
 export interface Tile {
@@ -15,20 +17,22 @@ export interface Tile {
 })
 export class IncidentComponent implements OnInit {
 
-  tiles: Tile[] = [
-    {text: 'Libellé', cols:2, rows: 1, color: 'orange'},
-    {text: 'Utilisateur', cols:2, rows: 1, color: 'orange'},
-    {text: 'Description incident', cols: 4, rows: 2, color: 'yellowgreen'},
-    {text: 'Photo', cols: 2, rows: 2, color: 'yellowgreen' },
-    {text: 'Coordonnées GPS', cols: 2, rows: 2, color: 'yellowgreen'},
-    {text: 'Statut et commentaires', cols: 4, rows: 1, color: 'orange'},
-  ];
 
-  constructor(
- 
-  ) { }
+  panelOpenState = true;
+
+  incident: IncidentsI[];
+
+  constructor(private incidentServ: IncidentServService) { }
 
   ngOnInit(): void {
+    this.incidentServ.getIncident().subscribe(incidents => {
+      console.log(incidents);
+      this.incident = incidents;
+    });
   }
+
+  tiles: Tile[] = [
+    {text: 'Photo', cols: 4, rows: 3, color: 'yellowgreen'},
+  ];
 
 }

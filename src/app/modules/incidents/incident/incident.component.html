@@ -1,15 +1,109 @@
 
-<mat-grid-list cols="4" rowHeight="100px" gutterSize="5px">
-    <mat-grid-tile
-        *ngFor="let tile of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color">
-      {{tile.text}}
-    </mat-grid-tile>
-  </mat-grid-list>
 
-<div>
-    <button mat-stroked-button color="primary">Retour</button>
-    <button mat-stroked-button color="accent">Valider</button>
-</div>
+<h3 mat-dialog-title>Incident</h3> 
+
+<mat-dialog-content>
+  <div>
+    <div *ngIf="incident?.length > 0;">
+      <mat-expansion-panel *ngFor="let incident of incident">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="font-family: Origin-Bold; font-size: 20px;">
+            {{ incident.type }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <mat-tab-group
+          mat-stretch-tabs
+          animationDuration="1000ms"
+          dynamicHeight
+          style="font-family: Origin-Light; font-size: 15px;"
+        >
+          <mat-tab label="Description" dynamicHeight class="mat-tab-label">
+            <br />
+            <mat-panel-description>
+              <h3>{{ incident.description }}</h3>
+            </mat-panel-description>
+            <br />
+  
+            <div class="list-container">
+              <div class="list-left">
+                <mat-list>
+                  <mat-list-item>
+                    <div mat-line>
+                      <h4>
+                        <mat-icon>adjust</mat-icon> Point GPS:
+                        {{ incident.lieu }}
+                      </h4>
+                    </div>
+                  </mat-list-item>
+                </mat-list>
+              </div>
+  
+              <div class="list-center">
+                <mat-list>
+                  <mat-list-item>
+                    <div mat-line>
+                      <h4>
+                        <mat-icon> directions_walk</mat-icon> Libelle:
+                        {{ incident.libelle }} km
+                      </h4>
+                    </div>
+                  </mat-list-item>
+                </mat-list>
+              </div>
+              <div class="list-right">
+                <mat-list>
+                  <mat-list-item>
+                    <div mat-line>
+                      <h4>
+                        <mat-icon> category</mat-icon> Type: {{ incident.type }}
+                      </h4>
+                    </div>
+                  </mat-list-item>
+                </mat-list>
+              </div>
+            </div>
+          </mat-tab>
+  
+          <mat-tab label="Carte">
+            <div style="height: 400px;">
+              <app-map></app-map>
+            </div>
+          </mat-tab>
+  
+          <mat-tab label="Photos">
+            <mat-grid-list cols="4" rowHeight="100px">
+              <mat-grid-tile
+                *ngFor="let tile of tiles"
+                [colspan]="tile.cols"
+                [rowspan]="tile.rows"
+                [style.background]="tile.color"
+              >
+                {{ tile.text }}
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-tab>
+        </mat-tab-group>
+  
+        <br/>
+      </mat-expansion-panel>
+  
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+      </mat-expansion-panel>
+  
+    </div>
+  </div>
+
+
+</mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-stroked-button color="primary" mat-dialog-close>Retour</button>
+    <button mat-stroked-button color="accent" mat-dialog-close>Valider</button>
+  </mat-dialog-actions>
+
+    
+

@@ -7,6 +7,9 @@ import {
 import { Observable } from "rxjs";
 import { IncidentsI } from "./incidentInterface";
 import { map } from "rxjs/operators";
+import Timestamp = firestore.Timestamp;
+import { firestore } from 'firebase/app';
+import * as _ from 'lodash';
 
 
 @Injectable({
@@ -19,12 +22,15 @@ export class IncidentServService {
 
   constructor(public afs: AngularFirestore) {
     this.incidentCollection = this.afs.collection("incident", (ref) =>
-      ref.orderBy("date", "asc")
+      ref.orderBy("no", "asc")
     );
-    this.incident = this.incidentCollection.snapshotChanges().pipe(
+    this.incident = this.incidentCollection.snapshotChanges()
+    .pipe(
       map((changes) => {
         return changes.map((x) => {
           const data = x.payload.doc.data() as IncidentsI;
+          Object.keys(data).filter(key=>data[key] instanceof Timestamp)
+            .forEach(key=>data[key]= data[key].toDate());
           data.id = x.payload.doc.id;
           return data;
         });
@@ -34,5 +40,9 @@ export class IncidentServService {
   getIncident() {
     return this.incident;
   }
+
+  // editCible(incident) {
+  //   this.incident.forEach(_.omit(incident, ''));
+  // }
 }
 
