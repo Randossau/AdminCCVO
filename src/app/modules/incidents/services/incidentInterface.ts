@@ -3,9 +3,9 @@ import { LocalisationI } from 'src/app/modules/map/localisationinterface';
 
 export interface IncidentsI {
 
-    id?: string;
-    no?: number;
-    date?: Date;
+    id: string;
+    no: number;
+    date: Date;
     description: string;
     utilisateur: UserI;
     image: string;
